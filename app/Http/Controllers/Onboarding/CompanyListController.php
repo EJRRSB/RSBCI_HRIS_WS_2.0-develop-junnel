@@ -32,7 +32,7 @@ class CompanyListController extends Controller
     }
 
     
-    /**
+    /** as
      * Function to fetch company list
      * @param $request
      * @return json
