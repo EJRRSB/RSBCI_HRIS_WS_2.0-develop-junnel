@@ -33,7 +33,7 @@ class LocationListController extends Controller
 
     /**
      * Function to fetch location list
-     * @param $request
+     * @param $request ssda
      * @return json
      */
     public function index(Request $request)
