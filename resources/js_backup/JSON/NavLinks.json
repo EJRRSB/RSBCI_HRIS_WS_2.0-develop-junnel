@@ -1,0 +1,36 @@
+{
+    "Dashboard": {
+        "name": "Dashboard",
+        "img_logo_src": "/assets/images/home-icon.svg",
+        "href": []
+    },
+    "Employees": {
+        "name": "Employees",
+        "img_logo_src": "/assets/images/employee-icon.svg",
+        "href": [{
+            "name": "Registrants",
+            "src": "/employee-list"
+        }]
+    },
+    "Timesheet": {
+        "name": "Timesheet",
+        "img_logo_src": "/assets/images/time-icon.svg",
+        "href": []
+    },
+    "Payroll": {
+        "name": "Payroll",
+        "img_logo_src": "/assets/images/payroll-icon.svg",
+        "href": []
+    },
+    "Leaves_OT": {
+        "name": "Leaves / OT",
+        "img_logo_src": "/assets/images/calendar-icon.svg",
+        "href": []
+    },
+    "Settings": {
+        "name": "Settings",
+        "img_logo_src": "/assets/images/settings-icon.svg",
+        "href": []
+    }
+
+}
