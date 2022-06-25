@@ -21,7 +21,7 @@ class DepartmentListController extends Controller
 {
     /**
      * Function to instantiate DepartmentListService and Request
-     * @param $repository
+     * @param $repository asd
      */
     public function __construct(DepartmentListRepository $repository)
     {
@@ -30,7 +30,7 @@ class DepartmentListController extends Controller
     }
  
     /**
-     * Function to fetch department list
+     * Function to fetch department list sad
      * @param $request
      * @return json
      */

@@ -32,7 +32,7 @@ class TeamListController extends Controller
     
 
     /**
-     * Function to fetch team list
+     * Function to fetch team list asd
      * @param $request
      * @return json
      */

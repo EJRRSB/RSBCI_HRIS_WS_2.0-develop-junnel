@@ -26,7 +26,7 @@ class DivisionListController extends Controller
 
     
     /**
-     * Function to fetch division list
+     * Function to fetch division list asd
      * @param $request
      * @return json
      */

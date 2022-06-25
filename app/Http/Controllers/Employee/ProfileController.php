@@ -125,7 +125,7 @@ class ProfileController extends Controller
     // /**
     //  * Function to delete employee
     //  * @param $id
-    //  * @return JsonResponse
+    //  * @return JsonResponse sd
     //  */
     // public function destroy($id)
     // {
