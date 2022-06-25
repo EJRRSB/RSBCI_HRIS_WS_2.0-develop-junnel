@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <img
-      :id="[isLarge ? 'loader' : 'loader2']"
+      :id="[isLarge ? 'loader' : 'loader2']" 
       src="assets/images/loader.svg"
     />
     <div :class="[isLarge ? 'message' : 'message2']">{{ message }}</div>

@@ -38,7 +38,7 @@ class ValidationController extends Controller
      * @return json
      */
     public function validateWorkEmailAddress()
-    {
+    { 
         return $this->service->validateWorkEmailAddress($this->getSubDomainFromURL(), $this->request->work_email_address);
     }
 
@@ -49,5 +49,24 @@ class ValidationController extends Controller
     public function validateUsername()
     {
         return $this->service->validateUsername($this->getSubDomainFromURL(), $this->request->username);
+    }
+
+    public function validateTenantName()
+    {
+
+        return $this->service->validateTenantName($this->getSubDomainFromURL());
+    //     return Http::withHeaders([
+    //         'SubDomainName' => 'SubDomain ' . $this->getSubDomainFromURL(),
+    //     ])->acceptJson()->get(config('app.API_URL') . '/api/v1/validate/domain_name/' . $this->getSubDomainFromURL());
+    }
+
+    public function validateEmail()
+    { 
+        return $this->service->validateEmail($this->getSubDomainFromURL()); 
+    }
+
+    public function validateCompanyName()
+    { 
+        return $this->service->validateCompanyName($this->getSubDomainFromURL()); 
     }
 }

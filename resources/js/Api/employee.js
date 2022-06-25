@@ -10,7 +10,8 @@ export default function useEmployees() {
         errors.value = ''
         try {
 
-            let response = await axios.post(config.apiURL + 'employee', data);
+            // let response = await axios.post(config.apiURL + 'employee', data);
+            let response = await axios.post('/api/v1/employee/profiles/detailed', data);
 
             if (response.data.errors) {
                 errors.value = response.data.errors

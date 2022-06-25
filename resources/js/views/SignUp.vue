@@ -250,7 +250,8 @@ export default {
             work_email_status.value = 0;
             await validateWorkEmail(form.work_email_address);
 
-            if (_email.value.data.data.is_exist) {
+            // if (_email.value.data.data.is_exist) { // before
+            if (_email.value.data.is_exist) { // ELTOn
                 data_errors["work_email_address"] = [
                     "The Work Email is already registered.",
                 ];
@@ -268,7 +269,7 @@ export default {
             _.debounce(() => {
                 data_errors["username"] = "";
                 form.username = username.value;
-                if (form.username) {
+                if (form.username) { 
                     validateRegisterUsername();
                     return;
                 }
@@ -276,12 +277,13 @@ export default {
             }, 500)
         );
 
-        const validateRegisterUsername = async () => {
+        const validateRegisterUsername = async () => { 
             username_status.value = 0;
             await validateUsername(form.username);
             console.log("TEST UNAME");
-            console.log(_username.value.data.data.is_exist);
-            if (_username.value.data.data.is_exist) {
+            console.log(_username.value.data.is_exist); 
+            if (_username.value.data.is_exist) { // before 
+            // if (_username.value.data.is_exist) { // elton
                 data_errors["username"] = [
                     "The Username is already registered.",
                 ];

@@ -215,9 +215,11 @@
             "
         />
     </MainTemplate>
+    <LoaderModal v-if="isShowed"/>
 </template>
 
 <script>
+import LoaderModal from '../components/Forms/LoaderModal.vue';
 import MainTemplate from "../components/MainTemplate.vue";
 import useEmployees from "../Api/employee";
 import ConfirmationModal from "../components/Notifs/ConfirmationModal.vue";
@@ -231,7 +233,7 @@ import {
 } from "@vue/runtime-core";
 import useEmployee from "../Api/employee";
 export default {
-    components: { MainTemplate, ConfirmationModal, Loading },
+    components: { MainTemplate, ConfirmationModal, Loading, LoaderModal },
     setup() {
         //Tabs Ref
         const activeTab = ref(0);
@@ -246,13 +248,17 @@ export default {
         //Modals
         const employee_id = ref();
         const modal_message = ref();
+        
+        const isShowed = ref(false); // modal
 
         //Activate Employee
         const showActivationModalConfirmation = ref(false);
 
-        const confirmActivateEmployee = async () => {
+        const confirmActivateEmployee = async () => { 
+            isShowed.value = true; // modal show
+            showActivationModalConfirmation.value = false; 
             await activateEmployee(employee_id.value);
-            showActivationModalConfirmation.value = false;
+            isShowed.value = false; // modal close  
         };
         const showActivationConfirmationModal = (id, message) => {
             showActivationModalConfirmation.value = true;
@@ -264,11 +270,13 @@ export default {
         const showDeclineModalConfirmation = ref(false);
 
         const confirmDeclineEmployee = async () => {
+            isShowed.value = true; // modal show
+            showDeclineModalConfirmation.value = false;
             await declineEmployee(employee_id.value);
             if (employees.value.data.data) {
                 await getEmployees(activeTab.value);
             }
-            showDeclineModalConfirmation.value = false;
+            isShowed.value = false; // modal close  
         };
         const showDeclinenConfirmationModal = (id, message) => {
             showDeclineModalConfirmation.value = true;
@@ -292,6 +300,7 @@ export default {
         });
 
         return {
+            isShowed,
             employee_list,
             employee_id,
             modal_message,

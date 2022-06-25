@@ -13,7 +13,7 @@
 <script>
  
     import Loading from '../../components/Loading.vue'
-import { ref } from 'vue'
+    import { ref } from 'vue'
 
     export default {
         components: {

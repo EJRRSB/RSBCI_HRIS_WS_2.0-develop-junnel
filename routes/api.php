@@ -54,7 +54,8 @@ Route::prefix('v1')->group(
         // Route::post('employee-list/{status}', [EmployeeListController::class, 'getEmployeesByStatus']);
         // Route::post('update-status/{id}/{statusCode}', [EmployeeListController::class, 'updateStatus']);
 
-        Route::post('tenant', [TenantController::class, 'validateTenantName']);
+        // Route::post('tenant', [TenantController::class, 'validateTenantName']); // before
+        Route::post('tenant', [ValidationController::class, 'validateTenantName']); // elton
         Route::post('validate/company_code', [ValidationController::class, 'validateCompanyCode']);
         Route::post('validate/work_email_address', [ValidationController::class, 'validateWorkEmailAddress']);
         Route::post('validate/username', [ValidationController::class, 'validateUsername']);

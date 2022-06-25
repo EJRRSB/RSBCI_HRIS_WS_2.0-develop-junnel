@@ -53,14 +53,15 @@ class ValidationService
         // $subDomain = 'asadk'; // this is temporary hard coded sub domain. Should be remove
 
         $result = $this->validationRepository->validateWorkEmailAddress($subDomain, $workEmailAddress);
+ 
+        return $result;
+        // if ($result->successful() === false) {
+        //     $this->returnResponse[responses::RESULT] = responses::FAIL;
+        //     $this->returnResponse[responses::MESSAGE] = 'Something went wrong while validating work email address.';
+        //     return json_encode($this->returnResponse);
+        // }
 
-        if ($result->successful() === false) {
-            $this->returnResponse[responses::RESULT] = responses::FAIL;
-            $this->returnResponse[responses::MESSAGE] = 'Something went wrong while validating work email address.';
-            return json_encode($this->returnResponse);
-        }
-
-        return $result->body();
+        // return $result->body();
     }
 
     /**
@@ -76,12 +77,34 @@ class ValidationService
 
         $result = $this->validationRepository->validateUsername($subDomain, $username);
 
-        if ($result->successful() === false) {
-            $this->returnResponse[responses::RESULT] = responses::FAIL;
-            $this->returnResponse[responses::MESSAGE] = 'Something went wrong while validating username.';
-            return json_encode($this->returnResponse);
-        }
+        return $result;
+        // if ($result->successful() === false) {
+        //     $this->returnResponse[responses::RESULT] = responses::FAIL;
+        //     $this->returnResponse[responses::MESSAGE] = 'Something went wrong while validating username.';
+        //     return json_encode($this->returnResponse);
+        // }
 
-        return $result->body();
+        // return $result->body();
+    }
+
+    public function validateTenantName($subDomain)
+    {
+        $result = $this->validationRepository->validateTenantName($subDomain);
+
+        return $result;
+    }
+
+    public function validateEmail($email)
+    {
+        $result = $this->validationRepository->validateEmail($email);
+
+        return $result;
+    }
+
+    public function validateCompanyName($company_name)
+    {
+        $result = $this->validationRepository->validateCompanyName($company_name);
+
+        return $result;
     }
 }
